@@ -18,3 +18,30 @@ if dp[str.length]
 else
   puts 'NO'
 end
+
+### Use BFS ###
+###
+str = gets.chomp
+ts = ['dream', 'dreamer', 'erase', 'eraser']
+todo = []
+todo.push(0)
+res = false
+while !todo.empty?
+  i = todo.shift
+  if i == str.length
+    res = true
+    break
+  end
+  ts.each do |t|
+    n = t.length
+    if str[i...(i+n)] == t
+    	todo.push(i+n)
+    end
+  end
+end
+if res
+  puts 'YES'
+else
+  puts 'NO'
+end
+###
