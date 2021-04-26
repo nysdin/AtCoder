@@ -14,3 +14,27 @@ arr.permutation.to_a.each do |root|
   end
 end
 puts ans
+
+####### 自作順列
+def my_permutation(arr)
+  result = []
+  permutation(arr, arr.size, [], result)
+  return result
+end
+
+def permutation(arr, size = nil, tmp = [], result = [])
+  size = arr.size if size.nil?
+  if size == 0
+    result.push(tmp)
+    return
+  end
+  
+  0.upto(size-1) do |i|
+    copy = arr.dup
+    copy.delete_at(i)
+    tmp_dup = tmp.dup
+    tmp_dup.push(arr[i])
+    permutation(copy, copy.size, tmp_dup, result)
+  end
+end
+########
