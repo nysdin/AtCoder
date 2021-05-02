@@ -15,7 +15,7 @@ def calc(seq)
   end
   $ans = now if now > $ans
 end
-
+#
 def dfs(seq)
   if seq.length == $n
     calc(seq)
