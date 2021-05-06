@@ -12,3 +12,4 @@ if flag
 else
   puts 'NO'
 end
+
