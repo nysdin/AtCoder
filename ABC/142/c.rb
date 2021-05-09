@@ -1,9 +1,7 @@
 n = gets.to_i
 a = gets.split.map(&:to_i)
-h = {}
+ans = Array.new(n)
 n.times do |i|
-  h[i+1] = a[i]
+  ans[a[i]-1] = (i+1).to_s
 end
-h.sort_by{ |_, v| v }.each do |i, _|
-  print(i, " ")
-end
+puts ans.join(" ")
